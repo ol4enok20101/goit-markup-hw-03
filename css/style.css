@@ -11,6 +11,16 @@ background: #FFFFFF; белый
 background: #F5F4FA; серый
 background: #2F303A; темный
 */
+
+/* raleway-700 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Raleway Bold'), local('Raleway-Bold'),
+       url('../fonts/raleway-v16-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/raleway-v16-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 :root {
     --main-font: "Roboto", sans-serif;
     --secondary-font: "Raleway", sans-serif;
@@ -30,12 +40,33 @@ body {
 }
 .list {
     list-style: none;
+    padding-left: 0;
+}
+.section-title { /*универсальный заголовок секции*/
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.16;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--section-title-color);
+}
+.container {
+    outline: 1px solid #666;
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul, li, h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /*Хедер*/
 .logo-link {
     font-family: var(--secondary-font);
-    font-weight: bold;
+    font-weight: 700;
     font-size: 26px;
     line-height: 1.19;
     letter-spacing: 0.03em;
@@ -46,7 +77,8 @@ body {
 }
 .navigation-list-link,
 .company-mail,
-.company-phone {
+.company-phone,
+.address {
     font-weight: 500;
     font-size: 14px;
     font-style: normal;
@@ -58,9 +90,6 @@ body {
 .navigation-list-link:focus {
     color: var(--accent-color);
 }
-.address {
-    font-style: normal;
-}
 .company-mail,
 .company-phone {
     color: var(--description-text-color);
@@ -71,18 +100,45 @@ body {
 .company-phone:focus {
     color: var(--accent-color);
 }
-
-/*универсальный заголовок секции*/
-.section-title {
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 1.16;
-    text-align: center;
-    letter-spacing: 0.03em;
-    color: var(--section-title-color);
+.navigation-list {
+    display: flex;
+}
+.navigation-list-item:not(:last-child) {
+    margin-right: 50px;
+}
+.header-address {
+    display: flex;
+    align-items: center; /*???почему-то не работает*/
+}
+.navigation {
+    display: flex;
+    align-items: center; 
+}
+.logo-link {
+    margin-right: 85px;
+}
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-contacts {
+    align-items: center;
+}
+.mail-link {
+    margin-right: 31px;
+}
+.navigation a,
+.header-address a {
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 /*Герой*/
+.hero .container {
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
 .hero-title {
     font-weight: 900;
     font-size: 44px;
@@ -91,19 +147,24 @@ body {
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #212121; /*изменить цвет потом*/
+   
+    margin-bottom: 30px;
 }
 .button {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 16px;
     line-height: 1.87;
     letter-spacing: 0.06em;
     color: #FFFFFF;
     background-color: var(--accent-color);
+align-items: flex-start;
+    width: 200px;
+    height: 50px;
 }
 
 /*Преимущества*/
 .advantage-name {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.03em;
@@ -111,22 +172,48 @@ body {
     color: #212121;
 }
 .advantage-description {
-    font-weight: normal;
+    font-weight: 400;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: var(--description-text-color);
 }
+.advantages-list {
+    padding-top: 94px;
+    display: flex;
+    justify-content: center;
+}
+.advantage-name {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.advantage-description {
+    width: 270px;
+}
 
 /*Чем мы занимаемся*/
 .activities-list-item-name {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1.14;
     line-height: 16px;
     text-align: center;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #212121; /*изменить цвет потом*/
+}
+.activities .section-title {
+    margin-bottom: 50px;
+}
+.activities-list-item {
+    display: inline-block;
+    flex-direction: row;
+}
+.activities-list-item:not(:last-child) {
+    margin-right: 30px;
+}
+.activities .container {
+    padding-top: 94px;
+    padding-bottom: 94px;
 }
 
 /*Наша команда*/
@@ -139,11 +226,41 @@ body {
     color: #212121;
 }
 .team-member-position {
-    font-weight: normal;
+    font-weight: 400;
     color: var(--description-text-color);
+}
+.team-member-social-links {
+    display: flex;
+}
+.team-member-image {
+    margin-bottom: 30px;
+}
+.team-members-list {
+    display: flex;
+}
+.team .section-title {
+    padding-top: 94px;
+    padding-bottom: 50px;
+}
+.team-member:not(:last-child) {
+    margin-right: 30px;
+}
+.team-member-name {
+    margin-bottom: 10px;
 }
 
 /*Постоянные клиенты*/
+.clients-list {
+    display: flex;
+    justify-content: space-around;
+}
+.clients .container {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+.clients .section-title {
+    margin-bottom: 50px;
+}
 
 
 
@@ -156,8 +273,9 @@ body {
     letter-spacing: 0.02em;
     color: #212121; /*изменить цвет потом*/
 }
-.join {
-    font-weight: bold;
+.join,
+.subscribe {
+    font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
@@ -167,6 +285,37 @@ body {
 .logo-footer {
     /* color: #FFFFFF; */
 }
+.contacts .container {
+    display: flex;
+}
+.footer-contacts,
+.footer-join,
+.footer-subscribe {
+    padding-top: 50px;
+}
+.join-links-list {
+    display: flex;
+}
+.logo-link {
+    display: block;
+    margin-bottom: 20px;
+}
+.company-address,
+.company-mail {
+    display: block;
+    margin-bottom: 9px;
+}
+.company-phone {
+    display: block;
+    margin-bottom: 60px;
+}
+.footer-contacts {
+    margin-right: 69px;
+}
+.footer-join { /*не работает*/
+    margin-right: 94;
+}
+
 
 /*Портфолио*/
 .portfolio-button-list-item {
@@ -182,14 +331,14 @@ body {
     color: var(--accent-text);
 }
 .portfolio-example-title {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
     color: var(--title-text-color);
 }
 .portfolio-example-text {
-    font-weight: normal;
+    font-weight: 400;
     font-size: 16px;
     line-height: 30px;
     letter-spacing: 0.03em;
