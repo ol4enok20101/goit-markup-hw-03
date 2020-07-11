@@ -11,8 +11,6 @@ background: #FFFFFF; белый
 background: #F5F4FA; серый
 background: #2F303A; темный
 */
-
-/* raleway-700 - latin */
 @font-face {
   font-family: 'Raleway';
   font-style: normal;
@@ -27,8 +25,11 @@ background: #2F303A; темный
     --section-title-color: #212121;
     --accent-color: #2196F3;
     --accent-text: #FFFFFF;
+    --logo-studio-header: #000000;
     --description-text-color: #757575;
     --title-text-color: #212121;
+    --background-dark-color: #2F303A;
+    --background-grey-color: #F5F4FA;
 }
 body {
     background-color: #ffffff;
@@ -64,41 +65,55 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
 }
 
 /*Хедер*/
-.logo-link {
+.logo-link-header {
     font-family: var(--secondary-font);
     font-weight: 700;
     font-size: 26px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-    color: #000000;
-}
-.logo-link-web {
     color: var(--accent-color);
+
+    margin-right: 85px;
 }
-.navigation-list-link,
-.company-mail,
-.company-phone,
-.address {
+.logo-studio-header {
+    color: var(--logo-studio-header);
+}
+.company-mail-header,
+.company-phone-header {
     font-weight: 500;
     font-size: 14px;
     font-style: normal;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    color: #212121; 
+    color: var(--description-text-color);
+
+    display: block; /*я не знаю, как сделать вместе картинку и ссылку*/
+}
+.company-mail-header:hover, 
+.company-mail-header:focus,
+.company-phone-header:hover, 
+.company-phone-header:focus {
+    color: var(--accent-color);
+}
+.mail-link-block {
+    margin-right: 31px;
+}
+.navigation-list-link {
+    font-weight: 500;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--section-title-color);
 }
 .navigation-list-link:hover,
 .navigation-list-link:focus {
     color: var(--accent-color);
 }
-.company-mail,
-.company-phone {
-    color: var(--description-text-color);
-}
-.company-mail:hover, 
-.company-mail:focus,
-.company-phone:hover, 
-.company-phone:focus {
-    color: var(--accent-color);
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .navigation-list {
     display: flex;
@@ -106,27 +121,9 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
 .navigation-list-item:not(:last-child) {
     margin-right: 50px;
 }
-.header-address {
-    display: flex;
-    align-items: center; /*???почему-то не работает*/
-}
 .navigation {
     display: flex;
     align-items: center; 
-}
-.logo-link {
-    margin-right: 85px;
-}
-.header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.header-contacts {
-    align-items: center;
-}
-.mail-link {
-    margin-right: 31px;
 }
 .navigation a,
 .header-address a {
@@ -157,9 +154,12 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
     letter-spacing: 0.06em;
     color: #FFFFFF;
     background-color: var(--accent-color);
-align-items: flex-start;
     width: 200px;
     height: 50px;
+}
+.hero-button {
+    margin-left: auto;
+    margin-right: auto; /*почему оно не работает*/
 }
 
 /*Преимущества*/
@@ -249,6 +249,10 @@ align-items: flex-start;
     margin-bottom: 10px;
 }
 
+.team {
+    background-color: var(--background-grey-color);
+}
+
 /*Постоянные клиенты*/
 .clients-list {
     display: flex;
@@ -265,65 +269,100 @@ align-items: flex-start;
 
 
 /*Контакты*/
-.company-address {
+.company-address { /*адрес компании в футере*/
     font-weight: 500;
     font-size: 14px;
     font-style: normal;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    color: #212121; /*изменить цвет потом*/
+    color: var(--accent-text);
+
+    display: block;
+    margin-bottom: 9px;
+}
+.company-mail-footer,
+.company-phone-footer {
+    font-weight: 500;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--description-text-color);
+
+    display: block;
+    margin-bottom: 9px;
+}
+.company-phone-footer {
+    margin-bottom: 60px;
 }
 .join,
-.subscribe {
+.subscribe { /*присоединяйтесь, подпишитесь в футере*/
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: #212121; /*изменить цвет потом*/
+    color: var(--accent-text);
+
+    display: block;
+    padding-top: 72px;
+    margin-bottom: 20px;
 }
-.logo-footer {
-    /* color: #FFFFFF; */
+.logo-link-footer { /*логотип в футере*/
+    font-family: var(--secondary-font);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: var(--accent-color);
+
+    display: block;
+    padding-top: 60px;
+    margin-right: 147px;
+    margin-bottom: 20px;
 }
-.contacts .container {
+.logo-studio-footer { /*белый цвет для слова studio*/
+    color: #FFFFFF;
+}
+.footer .container {
     display: flex;
 }
-.footer-contacts,
-.footer-join,
-.footer-subscribe {
-    padding-top: 50px;
+.footer-join {
+    margin-right: 94px;
 }
 .join-links-list {
     display: flex;
 }
-.logo-link {
-    display: block;
-    margin-bottom: 20px;
+.footer {
+    background-color: var(--background-dark-color);
 }
-.company-address,
-.company-mail {
-    display: block;
-    margin-bottom: 9px;
-}
-.company-phone {
-    display: block;
-    margin-bottom: 60px;
-}
-.footer-contacts {
-    margin-right: 69px;
-}
-.footer-join { /*не работает*/
-    margin-right: 94;
-}
+
+
+
+
+
+
+
+
+
+
 
 
 /*Портфолио*/
+.portfolio-button-list {
+    display: flex;
+    padding-top: 93px;
+    margin-bottom: 34px;
+}
 .portfolio-button-list-item {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.62;
     letter-spacing: 0.03em;
-    color: var(--title-text-color);
+    color: var(--title-text-color); 
+}
+.portfolio-button-list-item:not(:last-child) {
+    margin-right: 8px; /*не работает*/
 }
 .portfolio-button-list-item:hover,
 .portfolio-button-list-item:focus {
