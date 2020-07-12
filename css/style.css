@@ -86,8 +86,9 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--description-text-color);
-
-    display: block; /*я не знаю, как сделать вместе картинку и ссылку*/
+}
+.header-address {
+    display: flex;
 }
 .company-mail-header:hover, 
 .company-mail-header:focus,
@@ -228,8 +229,11 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
 .team-member-position {
     font-weight: 400;
     color: var(--description-text-color);
+    margin-bottom: 16px;
 }
 .team-member-social-links {
+    padding-bottom: 107px;
+
     display: flex;
 }
 .team-member-image {
@@ -265,8 +269,6 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
 .clients .section-title {
     margin-bottom: 50px;
 }
-
-
 
 /*Контакты*/
 .company-address { /*адрес компании в футере*/
@@ -353,21 +355,21 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
     display: flex;
     padding-top: 93px;
     margin-bottom: 34px;
+    justify-content: center;
 }
 .portfolio-button-list-item {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.62;
     letter-spacing: 0.03em;
-    color: var(--title-text-color); 
-}
-.portfolio-button-list-item:not(:last-child) {
-    margin-right: 8px; /*не работает*/
+    color: var(--title-text-color);
+
+    margin-bottom: 50px;
 }
 .portfolio-button-list-item:hover,
 .portfolio-button-list-item:focus {
-    background-color: var(--accent-color);
     color: var(--accent-text);
+    background-color: var(--accent-color);
 }
 .portfolio-example-title {
     font-weight: 700;
@@ -383,5 +385,20 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
     letter-spacing: 0.03em;
     color: var(--description-text-color);
 }
+.portfolio-example-list {
+    padding-bottom: 94px;
 
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.portfolio-example-list-item {
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+.portfolio-example-list-item:nth-child(3n) {
+    margin-right: 0;
+}
+.portfolio-example-list-item:nth-child(n+6) {
+    margin-bottom: 0;
+}
