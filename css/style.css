@@ -42,6 +42,7 @@ body {
 .list {
     list-style: none;
     padding-left: 0;
+    padding-right: 0;
 }
 .section-title { /*универсальный заголовок секции*/
     font-weight: 700;
@@ -164,6 +165,10 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
 }
 
 /*Преимущества*/
+.advantages .container {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
 .advantage-name {
     font-weight: 700;
     font-size: 14px;
@@ -180,7 +185,6 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
     color: var(--description-text-color);
 }
 .advantages-list {
-    padding-top: 94px;
     display: flex;
     justify-content: center;
 }
@@ -196,6 +200,14 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
 }
 
 /*Чем мы занимаемся*/
+.activities .container {
+    padding-top: 0;
+    padding-bottom: 67px;
+}
+.activities-list {
+    display: flex;
+    justify-content: center;
+}
 .activities-list-item-name {
     font-weight: 700;
     font-size: 1.14;
@@ -208,19 +220,15 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
 .activities .section-title {
     margin-bottom: 50px;
 }
-.activities-list-item {
-    display: inline-block;
-    flex-direction: row;
-}
 .activities-list-item:not(:last-child) {
     margin-right: 30px;
 }
-.activities .container {
-    padding-top: 94px;
-    padding-bottom: 94px;
-}
 
 /*Наша команда*/
+.team .container {
+    padding-top: 94;
+    padding-bottom: 107;
+} /*почему не работает???*/
 .team-member-name,
 .team-member-position {
     font-weight: 500;
@@ -238,7 +246,7 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 16px;
 }
 .team-member-social-links {
-    padding-bottom: 107px;
+    /* padding-bottom: 107px; */
     display: flex;
     justify-content: space-around;
 }
@@ -253,10 +261,10 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
     display: flex;
     justify-content: center;
 }
-.team .section-title {
+/* .team .section-title {
     padding-top: 94px;
     padding-bottom: 50px;
-}
+} */
 .team-member:not(:last-child) {
     margin-right: 30px;
 }
@@ -268,13 +276,13 @@ ul, li, h1, h2, h3, h4, h5, h6, p {
 }
 
 /*Постоянные клиенты*/
-.clients-list {
-    display: flex;
-    justify-content: space-around;
-}
 .clients .container {
     padding-top: 94px;
     padding-bottom: 94px;
+}
+.clients-list {
+    display: flex;
+    justify-content: space-around;
 }
 .clients .section-title {
     margin-bottom: 50px;
