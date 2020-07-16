@@ -69,6 +69,9 @@ img {
 }
 
 /*Хедер*/
+.header {
+    border-bottom: 1px solid #EEEEEE;
+}
 .logo-link-header {
     font-family: var(--secondary-font);
     font-weight: 700;
@@ -459,6 +462,11 @@ img {
 .portfolio-example-list-item:nth-child(n+6) {
     margin-bottom: 0;
 }
+.portfolio-card {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    overflow: hidden;
+}
 .portfolio-card-content {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -466,4 +474,7 @@ img {
     padding-right: 24px;
 
     border: 1px solid #EEEEEE;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    overflow: hidden;
 }
