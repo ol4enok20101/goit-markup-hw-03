@@ -255,6 +255,16 @@ img {
 
     margin-bottom: 37px;
 }
+.team-member {
+    border: 1px solid #EEEEEE;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+}
+.team-card-content {
+    background-color: #FFFFFF;
+}
 .team-member-name {
     font-weight: 500;
     font-size: 16px;
@@ -276,14 +286,12 @@ img {
 .team-member-social-links {
     display: flex;
     justify-content: space-around;
+    padding-bottom: 17px;
 }
 .team-member-social-link:hover,
 .team-member-social-link:focus {
     color: var(--accent-color);
     /*почему не работает??*/
-}
-.team-member-image {
-    margin-bottom: 30px;
 }
 .team-members-list {
     display: flex;
@@ -293,6 +301,7 @@ img {
     margin-right: 30px;
 }
 .team-member-name {
+    padding-top: 30px;
     margin-bottom: 10px;
 }
 
@@ -452,10 +461,6 @@ img {
     margin-right: 30px;
     margin-bottom: 30px;
 }
-/* .portfolio-example-list-item:hover,
-.portfolio-example-list-item:focus {
-    box-shadow: dimgray;
-} */
 .portfolio-example-list-item:nth-child(3n) {
     margin-right: 0;
 }
