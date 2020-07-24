@@ -103,6 +103,11 @@ img {
 .company-phone-header:focus {
     color: var(--accent-color);
 }
+.company-mail-header
+
+
+
+
 .mail-link-block {
     margin-right: 31px;
 }
@@ -143,7 +148,17 @@ img {
 .hero {
     /* outline: 1px solid #666; */
 
-    background-color: aquamarine;
+    background-image:
+    linear-gradient(
+        to bottom,
+         rgba(47, 48, 58, 0.8),
+         rgba(47, 48, 58, 0.8)
+    ),
+    url(../images/header-background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* max-width: 1600px; */
     padding-top: 200px;
     padding-bottom: 200px;
 
@@ -371,7 +386,6 @@ img {
     color: var(--accent-color);
 
     display: block;
-    margin-right: 147px;
     margin-bottom: 20px;
 }
 .logo-studio-footer { /*белый цвет для слова studio*/
@@ -380,9 +394,7 @@ img {
 .footer .container {
     display: flex;
     align-items: baseline;
-}
-.footer-join {
-    margin-right: 94px;
+    justify-content: space-between;
 }
 .join-links-list {
     display: flex;
